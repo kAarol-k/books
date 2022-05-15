@@ -6,7 +6,7 @@ import Books from './components/Books';
 import Navbar from './components/Navbar';
 function App() {
   return (
-    <div className="es">
+    <div className="app-container">
       <Navbar />
 
       <Routes>
