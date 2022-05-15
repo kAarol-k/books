@@ -4,4 +4,4 @@
 
 ### npm start
 
-## DEMO: https://whimsical-tarsier-308845.netlify.app/
+## DEMO: https://fancy-puffpuff-12173b.netlify.app/
