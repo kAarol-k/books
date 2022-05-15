@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/Books';
 import NoImage from './NoImage';
+import './book.css';
 function Books() {
   const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function Books() {
                 <div className="book-author">{book.publishedDate}</div>
                 <div className="book-sum">{book.description}</div>
                 <button
-                  className="remove"
+                  className="button-9"
                   onClick={() => {
                     dispatch(deleteBook({ id: book.id }));
                   }}
