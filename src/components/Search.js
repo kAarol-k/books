@@ -48,7 +48,7 @@ function Search() {
       </div>
 
       <div className="books-container">
-        {result.length != 0 ? (
+        {result.length !== 0 ? (
           <InfiniteScroll
             dataLength={result.length}
             next={fetchMoreData}
@@ -69,7 +69,7 @@ function Search() {
                 }
                 isFav={
                   bookList.book.find((favbook) => {
-                    if (favbook.id == book.id) return true;
+                    if (favbook.id === book.id) return true;
                   })
                     ? true
                     : false

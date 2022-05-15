@@ -4,6 +4,7 @@
   padding: 25px;
   height: 300px;
   margin-right: 1px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.192);
 }
 .book-photo {
   width: 120px;
@@ -71,4 +72,10 @@ h1 {
   font-size: 14px;
   width: 160px;
   border-radius: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .book-cell {
+    flex-direction: column;
+    height: 500px;
+  }
 }

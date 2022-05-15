@@ -12,4 +12,8 @@
   color: white;
   font-weight: 600;
   padding: 10px;
+  transition: 0.5s;
+}
+.navbar a:hover {
+  color: grey;
 }

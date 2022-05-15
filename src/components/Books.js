@@ -7,35 +7,39 @@ function Books() {
   const dispatch = useDispatch();
 
   return (
-    <>
-      {bookList.book.map((book) => (
-        <div className="App">
-          <div className="book-cell">
-            <div className="book-img">
-              {book.thumbnail ? (
-                <img src={book.thumbnail} className="book-photo" />
-              ) : (
-                <NoImage />
-              )}
+    <div className="App">
+      {bookList.book.length === 0 ? (
+        "You don't have any favorite books"
+      ) : (
+        <div className="books-container">
+          {bookList.book.map((book) => (
+            <div key={book.id} className="book-cell">
+              <div className="book-img">
+                {book.thumbnail ? (
+                  <img src={book.thumbnail} className="book-photo" />
+                ) : (
+                  <NoImage />
+                )}
+              </div>
+              <div className="book-content">
+                <div className="book-title">{book.title}</div>
+                <div className="book-author">{book.authors}</div>
+                <div className="book-author">{book.publishedDate}</div>
+                <div className="book-sum">{book.description}</div>
+                <button
+                  className="remove"
+                  onClick={() => {
+                    dispatch(deleteBook({ id: book.id }));
+                  }}
+                >
+                  Remove
+                </button>
+              </div>
             </div>
-            <div className="book-content">
-              <div className="book-title">{book.title}</div>
-              <div className="book-author">{book.authors}</div>
-              <div className="book-author">{book.publishedDate}</div>
-              <div className="book-sum">{book.description}</div>
-              <button
-                className="remove"
-                onClick={() => {
-                  dispatch(deleteBook({ id: book.id }));
-                }}
-              >
-                Remove
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
-      ))}
-    </>
+      )}
+    </div>
   );
 }
 
