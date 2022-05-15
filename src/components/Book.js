@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Heart from 'react-animated-heart';
 
-import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/Books';
+import { useSelector, useDispatch } from 'react-redux';
+import { addBook, deleteBook } from '../redux/Books';
 
 const Book = (props) => {
-  const { id, title, publishedDate, description, authors, thumbnail } = props;
+  const { id, isFav, title, publishedDate, description, authors, thumbnail } =
+    props;
   const dispatch = useDispatch();
+  const bookList = useSelector((state) => state.books);
+  const [isClick, setClick] = useState(false);
+
   const addToFavor = () => {
+    setClick(!isClick);
     dispatch(
       addBook({
         title: title,
@@ -22,9 +28,18 @@ const Book = (props) => {
       <p>{description}</p>
       <p>{authors}</p>
       <img src={thumbnail} />
-      <button className="fav" onClick={addToFavor}>
-        Add to fav
-      </button>
+      {isFav === true ? (
+        <Heart
+          className="fav"
+          isClick={true}
+          onClick={() => {
+            dispatch(deleteBook({ id: id }));
+            setClick(!isClick);
+          }}
+        />
+      ) : (
+        <Heart className="fav" isClick={false} onClick={addToFavor} />
+      )}
     </div>
   );
 };
