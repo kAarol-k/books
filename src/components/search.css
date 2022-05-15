@@ -5,7 +5,7 @@
   background: #fff;
   border-radius: 60px;
   transition: 0.5s;
-  box-shadow: 0 0 0 5px #2562ef1c;
+  box-shadow: 0 0 0 5px #0baeb452;
   width: 360px;
   overflow: hidden;
 }
@@ -29,7 +29,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  border: 3px solid #2563ef;
+  border: 3px solid #0badb4;
   border-radius: 50%;
   transform: translate(-4px, -4px) rotate(315deg);
 }
@@ -38,7 +38,7 @@
   position: absolute;
   width: 3px;
   height: 12px;
-  background: #2563ef;
+  background: #0badb4;
   transform: translate(6px, 6px) rotate(315deg);
 }
 .search .input {
@@ -56,4 +56,7 @@
   outline: none;
   font-size: 18px;
   padding: 10px 0;
+}
+.books-container {
+  width: 50vw;
 }

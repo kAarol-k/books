@@ -1,17 +1,14 @@
 import './App.css';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Search from './components/Search';
 import Books from './components/Books';
+import Navbar from './components/Navbar';
 function App() {
   return (
-    <div className="App">
-      <Link to={'/'}>
-        <button>home</button>
-      </Link>
-      <Link to={'/fav'}>
-        <button>fav</button>
-      </Link>
+    <div className="es">
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<Search />} />
         <Route exact path="/fav" element={<Books />} />

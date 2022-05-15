@@ -1,0 +1,15 @@
+.navbar {
+  width: 100%;
+  background-color: navajowhite;
+  height: 5vh;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+}
