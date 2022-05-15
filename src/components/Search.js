@@ -40,7 +40,7 @@ function Search() {
             title={book.volumeInfo?.title}
             publishedDate={book.volumeInfo?.publishedDate}
             authors={book.volumeInfo?.authors}
-            thumbnail={book.imageLinks?.thumbnail}
+            thumbnail={book.volumeInfo?.imageLinks?.thumbnail}
             description={
               book.volumeInfo?.description?.length > 200
                 ? `${book.volumeInfo?.description?.substring(0, 250)}...`

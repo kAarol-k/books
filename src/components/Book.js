@@ -4,11 +4,17 @@ import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/Books';
 
 const Book = (props) => {
+  const { id, title, publishedDate, description, authors, thumbnail } = props;
   const dispatch = useDispatch();
   const addToFavor = () => {
-    dispatch(addBook({ title: title }));
+    dispatch(
+      addBook({
+        title: title,
+        id: id,
+      })
+    );
   };
-  const { id, title, publishedDate, description, authors, thumbnail } = props;
+
   return (
     <div key={id}>
       <p>{title}</p>
